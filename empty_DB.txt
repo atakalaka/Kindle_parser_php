@@ -1,0 +1,77 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Oct 29, 2018 at 06:17 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `kindleParser`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `book_id` int(10) NOT NULL,
+  `book_title` text NOT NULL,
+  `book_owner` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `book_id` int(10) NOT NULL,
+  `english_text` text NOT NULL,
+  `translation` text,
+  `is_vocab` tinyint(1) NOT NULL,
+  `upload_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` text NOT NULL,
+  `pseudo` text NOT NULL,
+  `mail` text NOT NULL,
+  `password` text NOT NULL,
+  `created_at` date NOT NULL,
+  `modified_at` date NOT NULL,
+  `deleted_at` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `book_id` int(10) NOT NULL AUTO_INCREMENT;
