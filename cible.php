@@ -25,9 +25,7 @@
                 // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
 
                 // $masque_ponctuation = array('/^[ .,”\?!()]+/','/[ .,”\'?!()]+$/');
-                $masque_ponctuation = '/^[ .,”\?!()]+|[ .,”\'?!()]+$/';
-                $texte = preg_replace($masque_ponctuation,'','. Va t il y avoir... de la ponctuation ? , . (',2);
-                echo ($texte);    
+                $masque_ponctuation = '/^[ .,”\?!()]+|[ .,”\'?!()]+$/'; 
 
                     if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
                         {
